@@ -1,0 +1,7 @@
+#Dépendances
+/node_modules
+
+#Next.js
+/.next
+/build
+
