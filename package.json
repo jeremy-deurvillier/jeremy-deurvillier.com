@@ -13,7 +13,7 @@
     "url": "git+https://github.com/jeremy-deurvillier/jeremy-deurvillier.com.git"
   },
   "author": "Jérémy Deurvillier",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/jeremy-deurvillier/jeremy-deurvillier.com/issues"
   },
