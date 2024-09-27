@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/Navbar.astro';
+
 interface Props {
 	title: string;
 	description: string;
@@ -22,8 +24,14 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	</head>
 	<body>
+		<header class="mb-3">
+			<Navbar />
+		</header>
+		
 		<slot />
 	</body>
 </html>
