@@ -11,7 +11,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 
@@ -29,11 +29,15 @@ const { title, description } = Astro.props;
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	</head>
 	<body>
-		<header class="mb-3">
+		<header>
 			<Navbar />
+
+			<slot name="header" />
 		</header>
 		
-		<slot />
+		<main>
+			<slot />
+		</main>
 
 		<Footer />
 	</body>

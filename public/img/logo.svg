@@ -1,9 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" id="SVGRoot" sodipodi:docname="jd-logo.svg" inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview2668" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="false" inkscape:zoom="4" inkscape:cx="21.625" inkscape:cy="18.125" inkscape:window-width="1280" inkscape:window-height="704" inkscape:window-x="0" inkscape:window-y="27" inkscape:window-maximized="1" inkscape:current-layer="layer5"/>
+  <defs id="defs2663"/>
+  <g inkscape:label="background" inkscape:groupmode="layer" id="layer1">
+    <rect style="fill:#f4fbf9;fill-rule:evenodd;fill-opacity:1" id="rect2718" width="64" height="64" x="0" y="0"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer3" inkscape:label="left">
+    <rect style="fill:#f4fbf9;fill-opacity:1;fill-rule:evenodd" id="rect2924" width="32" height="64" x="0" y="0"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer4" inkscape:label="right">
+    <rect style="fill:#065f46;fill-opacity:1;fill-rule:evenodd" id="rect3075" width="32" height="64" x="32" y="0"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer5" inkscape:label="letters">
+    <text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:33.4223px;line-height:1.25;font-family:sans-serif;fill:#065f46;fill-opacity:1;stroke:none;stroke-width:0.835558" x="12.089067" y="43.796677" id="text16596"><tspan sodipodi:role="line" id="tspan16594" x="12.089067" y="43.796677" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nunito ExtraLight';-inkscape-font-specification:'Nunito ExtraLight, ';fill:#065f46;fill-opacity:1;stroke-width:0.835558">J</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:34.0426px;line-height:1.25;font-family:sans-serif;fill:#f4fbf9;fill-opacity:1;stroke:none;stroke-width:0.851065" x="35.165295" y="44.000031" id="text18910"><tspan sodipodi:role="line" id="tspan18908" x="35.165295" y="44.000031" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nunito ExtraLight';-inkscape-font-specification:'Nunito ExtraLight, ';fill:#f4fbf9;fill-opacity:1;stroke-width:0.851065">D</tspan></text>
+  </g>
 </svg>
