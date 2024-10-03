@@ -1,8 +1,11 @@
 ---
+import Contact from './Contact.astro';
 import Linkedin from './svg/Linkedin.astro';
 import Github from './svg/Github.astro';
 import Discord from './svg/Discord.astro';
 ---
+
+<Contact />
 
 <footer class="text-sm text-white bg-neutral-800 pb-1 px-2.5 sm:pt-6 md:px-5 lg:px-8 xl:px-12 2xl:px-24">
     <ul class="flex flex-wrap flex-col md:flex-row gap-6 md:gap-0">
@@ -11,7 +14,7 @@ import Discord from './svg/Discord.astro';
                 <li><a href="/" class="hover:underline">Accueil</a></li>
                 <li><a href="/services" class="hover:underline">Services</a></li>
                 <li><a href="/formations" class="hover:underline">Formations</a></li>
-                <li><a href="/contact" class="hover:underline">Contact</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
             </ul>
         </li>
         <li class="flex-none md:w-1/2">
