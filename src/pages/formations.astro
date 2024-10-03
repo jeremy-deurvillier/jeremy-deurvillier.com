@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Formations" description="Apprenez à construire vos propres applications web avec HTML, CSS et JavaScript. Suivez mes prochaines sessions et développer vos compétences !">
+ 	<section slot="header" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
+		<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+			<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-neutral-900 md:text-5xl lg:text-6xl dark:text-white">
+                Des <strong class="text-emerald-400">formations</strong> courtes, <strong class="text-emerald-400">adaptés</strong> à tous les niveaux
+			</h1>
+			<p class="mb-8 text-lg font-normal text-neutral-500 lg:text-xl sm:px-16 lg:px-48 dark:text-neutral-400">
+                Apprenez les bases essentielles pour maîtriser le développement web et Linux.
+			</p>
+			<div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+				<a href="#sessions-list" class="inline-flex justify-center items-center py-3 px-5 sm:ms-4 font-medium text-neutral-900 focus:outline-none bg-white rounded-lg border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700">
+					Voir les sessions
+					<svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-white dark:bg-neutral-900">
+		<div id="sessions-list" class="container px-6 py-10 mx-auto">
+			<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
+				Prochaines <span class="underline decoration-emerald-400">sessions</span>
+			</h2>
+	
+			<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
+                <p class="text-neutral-700 dark:text-neutral-200">Aucune session de formation pour le moment.</p>
+            </div>
+        </div>
+    </section>
+
+</Layout>
