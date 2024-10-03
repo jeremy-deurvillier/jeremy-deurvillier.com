@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Services" description="Développeur web passionné depuis de nombreuses années, je propose plusieurs services, de la mise en ligne de votre site web à la gestion de vos documents et e-mails. Je propose aussi des formations rapides pour vous permettre de construire vos premières applications web.">
+	<section slot="header" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
+		<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+			<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-neutral-900 md:text-5xl lg:text-6xl dark:text-white">
+                Des <strong class="text-emerald-400">services</strong> adaptés à vos <strong class="text-emerald-400">besoins</strong>
+			</h1>
+			<p class="mb-8 text-lg font-normal text-neutral-500 lg:text-xl sm:px-16 lg:px-48 dark:text-neutral-400">
+                Améliorez vos performances avec des solutions web personnalisés et efficaces.
+			</p>
+			<div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+				<a href="#services-list" class="inline-flex justify-center items-center py-3 px-5 sm:ms-4 font-medium text-neutral-900 focus:outline-none bg-white rounded-lg border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700">
+					En savoir plus
+					<svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-white min-h-[50vh] dark:bg-neutral-900 pb-10">
+		<div id="services-list" class="container px-6 py-10 mx-auto">
+			<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
+				Découvrir mes <span class="underline decoration-emerald-400">services</span>
+			</h2>
+
+			<p class="mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
+                En plus du développement de sites web, je propose diverses solutions numériques :
+			</p>
+            <ul class="flex flex-col lg:flex-row gap-3 mt-4 text-lg text-neutral-700 list-disc marker:text-emerald-500">
+                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#site-internet">Site internet</a></li>
+                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#site-e-commerce">Site e-commerce</a></li>
+                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#mail-server">Serveur de messagerie</a></li>
+                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#nextcloud">Stockage de fichiers</a></li>
+                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#formations">Formations courtes</a></li>
+            </ul>
+        </div>
+    </section>
+
+	<section id="site-internet" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
+		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
+			<div class="flex justify-center xl:justify-start 2xl:justify-center xl:w-1/2">
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+			</div>
+	
+			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
+				<h2 class="text-3xl font-semibold tracking-tight text-neutral-800 xl:text-4xl dark:text-white">
+                    Site internet
+				</h2>
+	
+				<p class="block text-justify max-w-2xl mt-4 text-neutral-500 dark:text-neutral-300">
+                    Je crée des sites web sur mesure, adaptés à vos besoins spécifiques. Que vous souhaitiez un site vitrine pour présenter votre activité ou un site plus complexe avec des fonctionnalités sur mesure, je vous accompagne à chaque étape, de la conception à la mise en ligne.
+				</p>
+
+                <h3 class="mt-6 text-xl font-semibold text-neutral-700 capitalize dark:text-white">
+                    Pourquoi choisir ce service ?
+                </h3>
+
+                <p class="text-justify max-w-2xl mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
+                    Un site internet est votre carte de visite digitale. Il renforce votre crédibilité, améliore votre visibilité et permet à vos clients de vous trouver facilement en ligne. Avoir un site professionnel et bien conçu est essentiel pour attirer et fidéliser vos clients. Avec mon expertise, vous bénéficiez d’un site performant, optimisé pour le référencement et facile à gérer.
+                </p>
+			</div>
+		</div>
+	</section>
+
+	<section id="site-e-commerce" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
+		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
+			<div class="flex justify-center xl:justify-end 2xl:justify-center xl:w-1/2 xl:order-last">
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+			</div>
+	
+			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
+				<h2 class="text-3xl font-semibold tracking-tight text-neutral-800 xl:text-4xl dark:text-white">
+                    Site e-commerce
+				</h2>
+	
+				<p class="block text-justify max-w-2xl mt-4 text-neutral-500 dark:text-neutral-300">
+                    Je développe des sites e-commerce personnalisés qui vous permettent de vendre vos produits ou services en ligne en toute simplicité. Que vous ayez besoin d’une boutique complète ou d’une solution sur mesure, je vous accompagne dans la création d'une plateforme fluide et optimisée pour les ventes.
+				</p>
+
+                <h3 class="mt-6 text-xl font-semibold text-neutral-700 capitalize dark:text-white">
+                    Pourquoi choisir ce service ?
+                </h3>
+
+                <p class="text-justify max-w-2xl mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
+                    Le commerce en ligne est un levier de croissance incontournable. Un site e-commerce bien conçu vous permet d’atteindre un plus grand nombre de clients, d’augmenter vos ventes et de gérer efficacement vos commandes. Avec mon expertise, vous bénéficierez d’une plateforme sécurisée, intuitive et évolutive, pour offrir à vos clients une expérience d’achat optimale.
+                </p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="mail-server" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
+		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
+			<div class="flex justify-center xl:justify-start 2xl:justify-center xl:w-1/2">
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+			</div>
+	
+			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
+				<h2 class="text-3xl font-semibold tracking-tight text-neutral-800 xl:text-4xl dark:text-white">
+                    Serveur de messagerie
+				</h2>
+	
+				<p class="block text-justify max-w-2xl mt-4 text-neutral-500 dark:text-neutral-300">
+                    Je vous propose l’installation de votre propre serveur de messagerie dédié, vous permettant de gérer vos e-mails de manière indépendante, sécurisée et professionnelle. Vous ne dépendrez plus d’un prestataire externe pour vos échanges électroniques.
+				</p>
+
+                <h3 class="mt-6 text-xl font-semibold text-neutral-700 capitalize dark:text-white">
+                    Pourquoi choisir ce service ?
+                </h3>
+
+                <p class="text-justify max-w-2xl mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
+                    Un serveur de messagerie dédié garantit la confidentialité de vos communications et une maîtrise totale de vos e-mails. Vous évitez les limitations des services classiques et améliorez la sécurité de vos données. C’est une solution idéale pour les entreprises soucieuses de protéger leurs informations sensibles et d’optimiser leur gestion des e-mails.
+                </p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="nextcloud" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
+		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
+			<div class="flex justify-center xl:justify-end 2xl:justify-center xl:w-1/2 xl:order-last">
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+			</div>
+	
+			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
+				<h2 class="text-3xl font-semibold tracking-tight text-neutral-800 xl:text-4xl dark:text-white">
+                    Stockage de fichiers
+				</h2>
+	
+				<p class="block text-justify max-w-2xl mt-4 text-neutral-500 dark:text-neutral-300">
+                    Je mets en place un serveur Nextcloud pour vous permettre de stocker, partager et synchroniser vos fichiers en toute sécurité. Nextcloud est une solution de stockage en ligne privée, alternative aux services cloud publics, adaptée à vos besoins.
+				</p>
+
+                <h3 class="mt-6 text-xl font-semibold text-neutral-700 capitalize dark:text-white">
+                    Pourquoi choisir ce service ?
+                </h3>
+
+                <p class="text-justify max-w-2xl mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
+                    Nextcloud vous offre un contrôle total sur vos données. Contrairement aux solutions de stockage dans le cloud grand public, vous hébergez et gérez vos fichiers vous-même, garantissant confidentialité et sécurité. Vous pouvez partager facilement vos documents, collaborer en temps réel, et avoir un accès sécurisé depuis n’importe quel appareil.
+                </p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="formations" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
+		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
+			<div class="flex justify-center xl:justify-start 2xl:justify-center xl:w-1/2">
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+			</div>
+	
+			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
+				<h2 class="text-3xl font-semibold tracking-tight text-neutral-800 xl:text-4xl dark:text-white">
+                    Formations courtes
+				</h2>
+	
+				<p class="block text-justify max-w-2xl mt-4 text-neutral-500 dark:text-neutral-300">
+                    Je propose des formations courtes et pratiques pour apprendre les bases du développement web (HTML, CSS, JavaScript) et de l’administration Linux (Ubuntu, Lubuntu). Que vous soyez débutant ou ayez besoin de renforcer vos compétences, ces formations sont conçues pour être accessibles et efficaces.
+				</p>
+
+                <h3 class="mt-6 text-xl font-semibold text-neutral-700 capitalize dark:text-white">
+                    Pourquoi choisir ce service ?
+                </h3>
+
+                <p class="text-justify max-w-2xl mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
+                    Acquérir des compétences en développement web ou en administration Linux peut vous donner plus d’autonomie dans vos projets numériques. Ces formations pratiques et adaptées à votre rythme vous permettent d’apprendre rapidement et de mettre en application vos connaissances immédiatement. C’est un excellent investissement pour ceux qui veulent progresser sans se perdre dans des formations trop longues et théoriques.
+                </p>
+			</div>
+		</div>
+	</section>
+</Layout>
