@@ -1,54 +1,33 @@
 ---
 import Contact from './Contact.astro';
-import Linkedin from './svg/Linkedin.astro';
-import Github from './svg/Github.astro';
-import Discord from './svg/Discord.astro';
+import { Image } from 'astro:assets';
 ---
 
 <Contact />
 
-<footer class="text-sm text-white bg-neutral-800 pb-1 px-2.5 sm:pt-6 md:px-5 lg:px-8 xl:px-12 2xl:px-24">
-    <ul class="flex flex-wrap flex-col md:flex-row gap-6 md:gap-0">
-        <li class="flex-none md:w-1/2">
-            <ul class="flex flex-col sm:flex-row items-center justify-center sm:justify-evenly md:justify-start xl:justify-center gap-2 md:gap-6">
-                <li><a href="/" class="hover:underline">Accueil</a></li>
-                <li><a href="/services" class="hover:underline">Services</a></li>
-                <li><a href="/formations" class="hover:underline">Formations</a></li>
-                <li><a href="#contact" class="hover:underline">Contact</a></li>
-            </ul>
-        </li>
-        <li class="flex-none md:w-1/2">
-            <ul class="flex flex-col sm:flex-row items-center justify-center md:justify-end xl:justify-center gap-2 sm:gap-12 md:gap-6">
-                <li><a href="/blog" class="hover:underline">Blog</a></li>
-                <li><a href="/projets" class="hover:underline">Projets</a></li>
-            </ul>
-        </li>
-        <li class="flex-1 w-full md:mt-12">
-            <ul class="flex flex-col sm:flex-row items-center sm:justify-between">
-                <li>
-                    <ul class="flex items-center justify-center gap-6">
-                        <li>
-                            <a href="https://github.com/jeremy-deurvillier" class="text-base">
-                                <Github />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/jeremy-deurvillier/" class="text-base">
-                                <Linkedin />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://discord.gg/NAxjvzWGmC" class="text-base">
-                                <Discord />
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="self-start sm:self-center sm:order-first mt-5 sm:mt-0">
-                    &copy; { new Date().getFullYear() } Jérémy Deurvillier.
-                    Tous droits réservés.
-                </li>
-            </ul>
-        </li>
-    </ul>
+<footer class="text-sm text-neutral-500 dark:text-neutral-400 bg-white dark:bg-gray-900">
+    <div class="container flex flex-col items-center justify-between px-6 pt-8 pb-4 mx-auto sm:flex-row">
+        <a href="/">
+            <Image class="w-auto h-7 rounded-sm" src="/img/logo.svg" width="28" height="28" alt="Logo de Jérémy Deurvillier" />
+        </a>
+
+        <ul class="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
+            <li><a href="/" class="hover:underline">Accueil</a></li>
+            <li><a href="/services" class="hover:underline">Services</a></li>
+            <li><a href="/formations" class="hover:underline">Formations</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="container flex flex-col items-center justify-between px-6 pt-0 pb-3 mx-auto sm:flex-row">
+        <ul class="flex flex-wrap items-center justify-center gap-4 mt-3 sm:mt-0 lg:gap-6 lg:mt-0 sm:order-last">
+            <li><a href="/mentions-legales" class="hover:underline">Mentions légales</a></li>
+            <li><a href="/conditions-generales" class="hover:underline">Conditions Générales</a></li>
+        </ul>
+
+        <p class="pt-5 sm:pt-0">
+            &copy; { new Date().getFullYear() } Jérémy Deurvillier.
+            Tous droits réservés.
+        </p>
+    </div>
 </footer>
