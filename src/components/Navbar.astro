@@ -51,7 +51,7 @@ const pathsList = Object.keys(pathsWithTransitionsList) as Path[];
     <div class="bg-emerald-600 fixed left-0 top-0 z-50 w-screen h-screen backdrop-blur-md" x-cloak x-show="isOpen" x-transition:enter="transition-all duration-200" x-transition:enter-start="h-0 backdrop-blur-none" x-transition:enter-end="h-screen backdrop-blur-md">
         <div class="h-full container flex flex-col md:flex-row justify-between px-6 py-4 mx-auto">
             <div class="h-full flex flex-col justify-between">
-                <ul class="flex flex-col gap-4">
+                <ul class="font-serif flex flex-col gap-4">
                     { pathsList.map( path => {
                         let transitions: TransitionsPhase = pathsWithTransitionsList[path];
 
