@@ -4,10 +4,38 @@ import Linkedin from './svg/Linkedin.astro';
 import Github from './svg/Github.astro';
 import Discord from './svg/Discord.astro';
 
-const currentUrl = Astro.url;
+const currentPathname: string = Astro.url.pathname;
+
+type Path = '/' | '/services' | '/formations' | '/contact';
+
+interface TransitionsPhase {
+    enter: string;
+    leave: string;
+};
+
+const pathsWithTransitionsList: Record<Path, TransitionsPhase> = {
+    '/': {
+        enter: 'delay-200',
+        leave: 'delay-700'
+    },
+    '/services': {
+        enter: 'delay-300',
+        leave: 'delay-500'
+    },
+    '/formations': {
+        enter: 'delay-500',
+        leave: 'delay-300'
+    },
+    '/contact': {
+        enter: 'delay-700',
+        leave: 'delay-200'
+    }
+};
+
+const pathsList = Object.keys(pathsWithTransitionsList) as Path[];
 ---
 
-<nav id="main-navigation" class="container px-6 py-4 mx-auto" x-data="{isOpen: false}" @keyup.escape.window="isOpen = false" data-currenturl={ currentUrl }>
+<nav class="container px-6 py-4 mx-auto" x-data="{isOpen: false}" @keyup.comma.window="isOpen = true" @keyup.escape.window="isOpen = false">
     <div class="flex items-center justify-between">
         <a href="/" class="rounded-sm">
             <Image src="/img/logo.svg" alt="Logo de Jérémy Deurvillier" width="32" height="32" />
@@ -24,13 +52,16 @@ const currentUrl = Astro.url;
         <div class="h-full container flex flex-col md:flex-row justify-between px-6 py-4 mx-auto">
             <div class="h-full flex flex-col justify-between">
                 <ul class="flex flex-col gap-4">
-                    <li><a href="/" class="font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white transition-all duration-200" x-show="isOpen" x-transition:enter-start="delay-200" x-transition:leave-start="delay-700">Accueil</a></li>
-                    <li><a href="/services" class="font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white transition-all duration-200" x-show="isOpen" x-transition:enter-start="delay-300" x-transition:leave-start="delay-500">Services</a></li>
-                    <li><a href="/formations" class="font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white transition-all duration-200" x-show="isOpen" x-transition:enter-start="delay-500" x-transition:leave-start="delay-300">Formations</a></li>
-                    <li><a href="#contact" class="font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white transition-all duration-200" x-show="isOpen" @click="isOpen = false" x-transition:enter-start="delay-700" x-transition:leave-start="delay-200">Contact</a></li>
+                    { pathsList.map( path => {
+                        let transitions: TransitionsPhase = pathsWithTransitionsList[path];
+
+                        return (currentPathname === path)
+                        ? <li><span class="after:content-[''] after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-neutral-200/60 transition-all duration-200" x-show="isOpen" x-transition:enter-start={ transitions.enter } x-transition:leave-start={ transitions.leave }>{ (path === '/')?'Accueil':path.substring(1) }</span></li>
+                        : <li><a href={ path } class="after:content-[''] after:block after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-[2ch] after:h-1 after:bg-neutral-200/60 after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white transition-all duration-200" x-show="isOpen" x-transition:enter-start={ transitions.enter } x-transition:leave-start={ transitions.leave }>{ (path === '/')?'Accueil':path.substring(1) }</a></li>
+                    }) }
                 </ul>
 
-                <div class="font-medium text-white hidden md:block">
+                <div class="after:content-[''] after:hidden after:md:block after:absolute after:left-0 after:top-0 after:w-24 after:h-0.5 after:lg:w-36 after:bg-neutral-200/60 after:-translate-y-2.5 relative font-medium text-white hidden md:block">
                     <blockquote class="italic">
                         <p class="mb-2.5">
                             Many great ideas go unexecuted, and many great executioners are without ideas. <br />One without the other is worthless.
@@ -41,7 +72,7 @@ const currentUrl = Astro.url;
             </div>
 
             <div class="flex md:flex-col items-center justify-between">
-                <ul class="flex md:flex-col items-center md:justify-end gap-8 md:order-last">
+                <ul class="after:content-[''] after:hidden after:md:block after:absolute after:left-1/2 after:top-0 after:w-0.5 after:h-24 after:lg:h-36 after:bg-neutral-200/60 after:-translate-y-28 after:lg:-translate-y-40 relative flex md:flex-col items-center md:justify-end gap-8 md:order-last">
                     <li>
                         <a class="text-white transition-colors duration-300 transform hover:text-emerald-500" href="https://github.com/jeremy-deurvillier" target="_blank">
                             <Github class="w-8 h-8" />
@@ -75,7 +106,3 @@ const currentUrl = Astro.url;
 
     [x-cloak] {display: none !important;}
 </style>
-
-<script>
-console.log('URL', document.querySelector('#main-navigation').dataset.currenturl);
-</script>
