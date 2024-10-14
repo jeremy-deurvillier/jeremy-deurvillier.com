@@ -48,16 +48,16 @@ const pathsList = Object.keys(pathsWithTransitionsList) as Path[];
         </button>
     </div>
 
-    <div class="bg-emerald-600 fixed left-0 top-0 z-50 w-screen h-screen backdrop-blur-md" x-cloak x-show="isOpen" x-transition:enter="transition-all duration-200" x-transition:enter-start="h-0 backdrop-blur-none" x-transition:enter-end="h-screen backdrop-blur-md">
+    <div class="bg-emerald-600 fixed left-0 top-0 z-50 w-screen h-screen backdrop-blur-md animate__animated animate__bounceInDown" x-cloak x-show="isOpen" x-transition:leave="animate__bounceOutUp">
         <div class="h-full container flex flex-col md:flex-row justify-between px-6 py-4 mx-auto">
             <div class="h-full flex flex-col justify-between">
-                <ul class="font-serif flex flex-col gap-4">
+                <ul class="font-mono flex flex-col gap-4">
                     { pathsList.map( path => {
                         let transitions: TransitionsPhase = pathsWithTransitionsList[path];
 
                         return (currentPathname === path)
-                        ? <li><span class="after:content-[''] after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-neutral-200/60 transition-all duration-200" x-show="isOpen" x-transition:enter-start={ transitions.enter } x-transition:leave-start={ transitions.leave }>{ (path === '/')?'Accueil':path.substring(1) }</span></li>
-                        : <li><a href={ path } class="after:content-[''] after:block after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-[2ch] after:h-1 after:bg-neutral-200/60 after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white transition-all duration-200" x-show="isOpen" x-transition:enter-start={ transitions.enter } x-transition:leave-start={ transitions.leave }>{ (path === '/')?'Accueil':path.substring(1) }</a></li>
+                        ? <li><span class="after:content-[''] after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-neutral-200/60">{ (path === '/')?'Accueil':path.substring(1) }</span></li>
+                        : <li><a href={ path } class="after:content-[''] after:block after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-[2ch] after:h-1 after:bg-neutral-200/60 after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white">{ (path === '/')?'Accueil':path.substring(1) }</a></li>
                     }) }
                 </ul>
 
@@ -91,7 +91,7 @@ const pathsList = Object.keys(pathsWithTransitionsList) as Path[];
                 </ul>
 
                 <div class="flex items-center justify-center -translate-y-0.5 md:-translate-y-5">
-                    <button class="text-6xl text-white transition-all duration-200" x-show="isOpen" x-transition:enter-start="delay-1000" x-transition:leave="delay-1000" @click="isOpen = false">&times;</button>
+                    <button class="text-6xl text-white transition-all duration-200" @click="isOpen = false">&times;</button>
                 </div>
             </div>
         </div>

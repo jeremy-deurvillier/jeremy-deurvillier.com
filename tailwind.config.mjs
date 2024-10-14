@@ -8,7 +8,8 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Nunito', ...defaultTheme.fontFamily.sans],
-				'serif': ['"EB Garamond"', ...defaultTheme.fontFamily.serif]
+				'serif': ['"Zilla Slab"', ...defaultTheme.fontFamily.serif],
+				'mono': ['Sono', ...defaultTheme.fontFamily.mono]
 			}
 		},
 	},
