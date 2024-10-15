@@ -72,26 +72,26 @@ const pathsList = Object.keys(pathsWithTransitionsList) as Path[];
             </div>
 
             <div class="flex md:flex-col items-center justify-between">
-                <ul class="after:content-[''] after:hidden after:md:block after:absolute after:left-1/2 after:top-0 after:w-0.5 after:h-24 after:lg:h-36 after:bg-neutral-200/60 after:-translate-y-28 after:lg:-translate-y-40 relative flex md:flex-col items-center md:justify-end gap-8 md:order-last">
+                <ul class="after:content-[''] after:hidden after:md:block after:absolute after:left-1/2 after:top-0 after:w-0.5 after:h-24 after:lg:h-36 after:bg-neutral-200/60 after:-translate-y-32 after:lg:-translate-y-44 relative flex md:flex-col items-center md:justify-end gap-8 md:order-last">
                     <li>
-                        <a class="text-white transition-colors duration-300 transform hover:text-emerald-500" href="https://github.com/jeremy-deurvillier" target="_blank">
+                        <a class="social-links text-white" href="https://github.com/jeremy-deurvillier" target="_blank">
                             <Github class="w-8 h-8" />
                         </a>
                     </li>
                     <li>
-                        <a class="text-white transition-colors duration-300 transform hover:text-emerald-500" href="https://www.linkedin.com/in/jeremy-deurvillier/" target="_blank">
+                        <a class="social-links text-white" href="https://www.linkedin.com/in/jeremy-deurvillier/" target="_blank">
                             <Linkedin class="w-8 h-8" />
                         </a>
                     </li>
                     <li>
-                        <a class="text-white transition-colors duration-300 transform hover:text-emerald-500" href="https://discord.gg/NAxjvzWGmC" target="_blank">
-                            <Discord class="w-9 h-9" />
+                        <a class="social-links text-white" href="https://discord.gg/NAxjvzWGmC" target="_blank">
+                            <Discord class="w-8 h-8" />
                         </a>
                     </li>
                 </ul>
 
                 <div class="flex items-center justify-center -translate-y-0.5 md:-translate-y-5">
-                    <button class="text-6xl text-white transition-all duration-200" @click="isOpen = false">&times;</button>
+                    <button class="close-icon text-6xl text-white transition-all duration-200" @click="isOpen = false">&times;</button>
                 </div>
             </div>
         </div>
@@ -105,4 +105,36 @@ const pathsList = Object.keys(pathsWithTransitionsList) as Path[];
     }
 
     [x-cloak] {display: none !important;}
+
+    .social-links:hover {
+        display: block;
+        animation: wiggle 1.5s linear infinite;
+    }
+
+    .close-icon:hover {
+        display: block;
+        animation: scale .6s linear 1;
+    }
+
+    /* ***** Animations ***** */
+
+    @keyframes wiggle {
+        0%, 7% { transform: rotateZ(0); }
+        15% { transform: rotateZ(-30deg); }
+        20% { transform: rotateZ(20deg); }
+        25% { transform: rotateZ(-20deg); }
+        30% { transform: rotateZ(12deg); }
+        35% { transform: rotateZ(-8deg); }
+        40%, 100% { transform: rotateZ(0); }
+    }
+
+    @keyframes scale {
+        0% { transform: scale(1); }
+        28% { transform: scale(.66); }
+        44% { transform: scale(.99); }
+        59% { transform: scale(1.1); }
+        73% { transform: scale(.99); }
+        88% { transform: scale(.9); }
+        100% { transform: scale(1); }
+    }
 </style>
