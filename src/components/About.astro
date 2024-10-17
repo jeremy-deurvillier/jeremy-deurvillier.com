@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<div class="hidden bg-white dark:bg-neutral-900 py-10 md:py-16">
+    <hr class="w-4/5 md:w-3/5 border-px border-neutral-200 dark:border-neutral-600 mx-auto" />
+</div>
+
+<section class="bg-gradient-to-r from-emerald-600 to-emerald-900 flex items-center justify-center">
+    <div class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
+        <div class="flex justify-center xl:w-1/2">
+            <Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600" src="/img/profile-photo.png" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+        </div>
+
+        <div class="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">
+            <h2 class="text-2xl font-semibold tracking-tight xl:text-3xl text-white">
+                À propos
+            </h2>
+
+            <p class="block max-w-2xl mt-4 text-neutral-300">
+                Je suis Jérémy Deurvillier, développeur web à Saint-Étienne.
+                Passionné par les technologies web et l'informatique, 
+                je suis convaincu de pouvoir apporter mon expertise au service de votre entreprise. 
+                Que vous soyez une PME ou une startup, je suis prêt à vous accompagner dans le développement et la réussite de vos projets.
+            </p>
+
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-6 sm:-mx-2">
+                <a href="/calendar" class="font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 text-xl font-medium text-center text-white rounded-lg bg-emerald-600 hover:bg-emerald-500 transition-colors duration-200 focus:ring-4 focus:ring-emerald-500 dark:focus:ring-emerald-500">
+                    <svg class="w-5 h-5 mx-2" xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 448 512"><path fill="currentColor" d="M128 0c17.7 0 32 14.3 32 32v32h128V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v48H0v-48c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32M0 192h448v272c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16m128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16m144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16m144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16"/></svg>
+
+                    <span>
+                        Prendre un rendez-vous
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
