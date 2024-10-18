@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
 import Linkedin from '../components/svg/Linkedin.astro';
 import Github from '../components/svg/Github.astro';
 import Discord from '../components/svg/Discord.astro';
@@ -16,12 +17,11 @@ import About from '../components/About.astro';
                 Transformez vos idées en actions concrètes, je vous accompagne.
 			</p>
 			<div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-				<a href="#contact" class="font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-xl font-medium text-neutral-900 focus:outline-none bg-white rounded-lg border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700">
-					Je passe à l'action
+                <Button tag="link" style="secondary" target="#contact" text="Je passe à l'action">
 					<svg class="w-3.5 h-3.5 ms-2 translate-y-0.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
 						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
 					</svg>
-				</a>
+                </Button>
 			</div>
 		</div>
 	</section>
@@ -102,9 +102,9 @@ import About from '../components/About.astro';
                                 <textarea id="message" class="block w-full h-32 px-5 py-3 mt-2 text-neutral-700 placeholder-neutral-400 bg-white border border-neutral-200 rounded-md md:h-48 dark:bg-neutral-800 dark:text-neutral-300 dark:border-neutral-600 focus:border-emerald-400 focus:ring-emerald-300 focus:ring-opacity-40 dark:focus:border-emerald-300 focus:outline-none focus:ring" placeholder="Votre message" required></textarea>
                             </div>
 
-                            <button class="w-full px-6 py-3 mt-6 font-serif text-xl font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-emerald-600 rounded-md hover:bg-emerald-500 focus:outline-none focus:ring focus:ring-emerald-400 focus:ring-opacity-50">
-                                Envoyer
-                            </button>
+                            <div class="w-full flex mt-6 *:w-full">
+                                <Button tag="submit" text="Envoyer" />
+                            </div>
                         </form>
                     </div>
                 </div>

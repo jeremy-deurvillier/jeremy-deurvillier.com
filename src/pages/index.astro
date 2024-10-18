@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
 import About from '../components/About.astro';
 ---
 
@@ -15,15 +16,12 @@ import About from '../components/About.astro';
 				Renforcez votre présence en ligne et accélérez votre croissance grâce à un site performant et sécurisé.
 			</p>
 			<div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-				<a href="/calendar" class="font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 text-xl font-medium text-center text-white rounded-lg bg-emerald-600 hover:bg-emerald-700 focus:ring-4 focus:ring-emerald-500 dark:focus:ring-emerald-500">
-					Prendre un rendez-vous 
-				</a>
-				<a href="#services" class="font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-xl font-medium text-neutral-900 focus:outline-none bg-white rounded-lg border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700">
-					Découvrir
+				<Button tag="link" text="Prendre un rendez-vous" target="/calendar" />
+				<Button tag="link" text="Découvrir" target="#services" style="secondary">
 					<svg class="w-3.5 h-3.5 ms-2 translate-y-0.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
 						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
 					</svg>
-				</a>  
+				</Button>
 			</div>
 		</div>
 	</section>

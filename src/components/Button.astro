@@ -1,0 +1,79 @@
+---
+
+/* ** Usage (for tag="button"):
+* The "bind" property takes the name of a function and executes it when the button is clicked.
+* The function must be added to the window.actions object to be recognized by the Button component.
+*/
+
+interface CommonProps {
+    text: string;
+	style?: 'primary' | 'secondary';
+}
+
+interface Link extends CommonProps {
+    tag: 'link';
+    target: string;
+}
+
+interface Button extends CommonProps {
+    tag: 'button';
+    bind: string;
+}
+
+interface FormButton extends CommonProps {
+    tag: 'submit' | 'reset';
+}
+
+type Props = Link | Button | FormButton;
+
+const { text, tag, style = 'primary', target, bind } = Astro.props as Props;
+
+const primaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 text-xl font-medium text-center text-white rounded-lg bg-emerald-600 hover:bg-emerald-500 focus:ring-4 focus:ring-emerald-500 dark:focus:ring-emerald-500';
+const secondaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-xl font-medium text-neutral-900 focus:outline-none bg-white rounded-lg border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700';
+
+let className = (style === 'primary') ? primaryStyle : secondaryStyle;
+
+---
+
+{
+    (tag === 'link')
+    ?
+    (<a href={ target } class={ className }>
+        { text }
+
+        <slot />
+    </a>)
+    :
+    (tag === 'submit' || tag === 'reset')
+    ?
+    (<button type={ tag } class={ className }>
+        { text }
+
+        <slot />
+    </button>)
+    :
+    (<jd-button>
+        <button type={ tag } class={ className } data-action={ bind }>
+            { text }
+
+            <slot />
+        </button>
+    </jd-button>)
+}
+
+<script>
+window.actions = window.actions || {};
+
+class JDButton extends HTMLElement {
+    connectedCallback() {
+        const button: HTMLButtonElement|null = this.querySelector('button');
+        const action = button?.dataset.action;
+
+        button?.addEventListener('click', () => {
+            window.actions[action]();
+        });
+    }
+}
+
+customElements.define('jd-button', JDButton);
+</script>
