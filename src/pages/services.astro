@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import Button from '../components/Button.astro';
+import H2 from '../components/H2.astro';
 import About from '../components/About.astro';
 ---
 
@@ -26,9 +27,7 @@ import About from '../components/About.astro';
 
 	<section class="bg-white min-h-[50vh] dark:bg-neutral-900 pb-10">
 		<div id="services-list" class="container px-6 py-10 mx-auto">
-			<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
-				Découvrir mes <span class="underline decoration-emerald-400">services</span>
-			</h2>
+			<H2 text="Découvrir mes " highlighted="services" />
 
 			<p class="mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
                 En plus du développement de sites web, je propose diverses solutions numériques :

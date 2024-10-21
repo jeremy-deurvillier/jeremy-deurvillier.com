@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import H2 from '../components/H2.astro';
 import About from '../components/About.astro';
 ---
 
@@ -25,9 +26,7 @@ import About from '../components/About.astro';
 
 	<section class="bg-white dark:bg-neutral-900 pb-8 lg:pb-10">
 		<div id="sessions-list" class="container px-6 py-10 mx-auto">
-			<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
-				Prochaines <span class="underline decoration-emerald-400">sessions</span>
-			</h2>
+			<H2 text="Prochaines " highlighted="sessions" />
 	
 			<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
                 <p class="text-neutral-700 dark:text-neutral-200">Aucune session de formation pour le moment.</p>

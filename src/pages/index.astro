@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import H2 from '../components/H2.astro';
 import About from '../components/About.astro';
 ---
 
@@ -28,9 +29,7 @@ import About from '../components/About.astro';
 
 	<section class="bg-white dark:bg-neutral-900">
 		<div id="services" class="container px-6 py-10 mx-auto">
-			<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
-				Découvrir mes <span class="underline decoration-emerald-400">services</span>
-			</h2>
+			<H2 text="Découvrir mes " highlighted="services" />
 
 			<p class="mt-4 text-neutral-500 xl:mt-6 dark:text-neutral-300">
 				Du développement de votre site web à la gestion de vos e-mails et fichiers, je propose des solutions sur mesure adaptées à vos besoins.
@@ -133,9 +132,7 @@ import About from '../components/About.astro';
 
 	<section class="bg-white dark:bg-neutral-900">
 		<div class="container px-6 py-10 mx-auto">
-			<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
-				Explorer mon <span class="underline decoration-emerald-400">portfolio</span>
-			</h2>
+			<H2 text="Explorer mon " highlighted="portfolio" />
 	
 			<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
 				<div class="flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('https://img.freepik.com/vecteurs-libre/bientot-design-backgroun-noir_1017-37033.jpg?t=st=1727881249~exp=1727884849~hmac=d89f5f17363d94e89fda36fde8cf1c851e4bfe6c6bd0dc01753b38aaf5614183&w=826')">
@@ -188,9 +185,7 @@ import About from '../components/About.astro';
 
 	<section class="bg-white dark:bg-neutral-900 pb-8 lg:pb-10">
 		<div class="container px-6 py-10 mx-auto">
-			<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
-				<span class="underline decoration-emerald-400">On parle</span> de mon travail
-			</h2>
+			<H2 text="de mon travail" highlighted="On parle " order="first" />
 	
 			<p class="max-w-2xl mt-6 text-neutral-500 dark:text-neutral-300">
 				Des témoignages qui reflètent ma passion et mon engagement.

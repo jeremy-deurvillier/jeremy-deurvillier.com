@@ -1,0 +1,23 @@
+---
+type Props = {
+    text: string;
+    highlighted: string;
+    order?: 'first'|'last';
+};
+
+const { text, highlighted, order = 'last' } = Astro.props as Props;
+
+const highlightStyle: string = 'font-semibold border-b-4 border-emerald-400 inline-block pb-0';
+---
+
+<h2 class="text-3xl font-semibold text-neutral-800 capitalize lg:text-4xl dark:text-white">
+    {
+        (order === 'first') ? <strong class={ highlightStyle }>{ highlighted }</strong> : null
+    }
+
+    { text }
+
+    {
+        (order === 'last') ? <strong class={ highlightStyle }>{ highlighted }</strong> : null
+    }
+</h2>
