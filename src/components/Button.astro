@@ -28,8 +28,8 @@ type Props = Link | Button | FormButton;
 
 const { text, tag, style = 'primary', target, bind } = Astro.props as Props;
 
-const primaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 text-xl font-medium text-center text-white rounded-lg bg-emerald-600 hover:bg-emerald-500 focus:ring-4 focus:ring-emerald-500 dark:focus:ring-emerald-500';
-const secondaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-xl font-medium text-neutral-900 focus:outline-none bg-white rounded-lg border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700';
+const primaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-4 px-6 text-xl font-medium text-center text-white bg-emerald-600 hover:bg-emerald-500 focus:ring-4 focus:ring-emerald-500 dark:focus:ring-emerald-500 primary';
+const secondaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-4 px-6 sm:ms-4 text-xl font-medium text-neutral-900 focus:outline-none bg-white border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700 secondary';
 
 let className = (style === 'primary') ? primaryStyle : secondaryStyle;
 
@@ -60,6 +60,45 @@ let className = (style === 'primary') ? primaryStyle : secondaryStyle;
         </button>
     </jd-button>)
 }
+
+<style>
+.primary,
+.secondary {
+    transition: background-color .3s ease;
+}
+
+.primary {
+    border-radius: 1.5rem 2.5rem / 2.5rem 1.5rem;
+}
+
+.secondary {
+    border-radius: 2.5rem 1.5rem / 1.5rem 2.5rem;
+}
+
+.primary:hover {
+    animation: primaryMove 3s ease infinite;
+}
+
+.secondary:hover {
+    animation: secondaryMove 3s ease infinite;
+}
+
+@keyframes primaryMove {
+    0% { border-radius: 1.5rem 2.5rem / 2.5rem 1.5rem; }
+    25% { border-radius: 2.5rem 1.5rem / 1.5rem 2.5rem; }
+    50% { border-radius: 1.5rem 2.5rem / 2.5rem 1.5rem; }
+    75% { border-radius: 2.5rem 1.5rem / 1.5rem 2.5rem; }
+    100% { border-radius: 1.5rem 2.5rem / 2.5rem 1.5rem; }
+}
+
+@keyframes secondaryMove {
+    0% { border-radius: 2.5rem 1.5rem / 1.5rem 2.5rem; }
+    25% { border-radius: 1.5rem 2.5rem / 2.5rem 1.5rem; }
+    50% { border-radius: 2.5rem 1.5rem / 1.5rem 2.5rem; }
+    75% { border-radius: 1.5rem 2.5rem / 2.5rem 1.5rem; }
+    100% { border-radius: 2.5rem 1.5rem / 1.5rem 2.5rem; }
+}
+</style>
 
 <script>
 window.actions = window.actions || {};
