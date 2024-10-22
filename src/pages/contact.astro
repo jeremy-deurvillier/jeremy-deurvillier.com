@@ -152,7 +152,8 @@ import About from '../components/About.astro';
         let prefix: string = partsContact[3].split('').reverse().join('');
 
         tContact?.setAttribute('href', `${prefix}:${contact}`);
-        tContact.textContent = format(contact);
+
+        if (tContact) tContact.textContent = format(contact);
     }
 
     /* ** Show  "m contact" */
@@ -171,10 +172,11 @@ import About from '../components/About.astro';
         let prefix: string = partsContact[4].split('').reverse().join('');
 
         mContact?.setAttribute('href', `${prefix}:${contact}`);
-        mContact.textContent = contact;
+
+        if (mContact) mContact.textContent = contact;
     }
 
-    document.addEventListener('DOMContentLoaded', (e: Event) => {
+    document.addEventListener('DOMContentLoaded', () => {
         setTimeout(showTContact, 3000);
         setTimeout(showMContact, 3000);
     });
