@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import H2 from '../components/H2.astro';
 import ReadMore from '../components/ReadMore.astro';
+import Project from '../components/Project.astro';
 import About from '../components/About.astro';
 ---
 
@@ -121,50 +122,13 @@ import About from '../components/About.astro';
 			<H2 text="Explorer mon " highlighted="portfolio" />
 	
 			<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
-				<div class="flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('https://img.freepik.com/vecteurs-libre/bientot-design-backgroun-noir_1017-37033.jpg?t=st=1727881249~exp=1727884849~hmac=d89f5f17363d94e89fda36fde8cf1c851e4bfe6c6bd0dc01753b38aaf5614183&w=826')">
-					<div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-neutral-700/60">
-						<h3 class="mt-4 text-xl font-semibold text-neutral-800 capitalize dark:text-white">
-							AR escape game
-						</h3>
-						<p class="mt-2 text-lg tracking-wider">
-							<a href="https://www.netlify.com" class="text-emerald-700 dark:text-emerald-400 hover:underline" target="_blank">Voir le site</a>
-						</p>
-					</div>
-				</div>
+				<Project title="AR escape game" target="https://www.netlify.com" />
 	
-				<div class="flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('https://img.freepik.com/vecteurs-libre/bientot-design-backgroun-noir_1017-37033.jpg?t=st=1727881249~exp=1727884849~hmac=d89f5f17363d94e89fda36fde8cf1c851e4bfe6c6bd0dc01753b38aaf5614183&w=826')">
-					<div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-neutral-700/60">
-						<h3 class="mt-4 text-xl font-semibold text-neutral-800 capitalize dark:text-white">
-							Private photo albums
-						</h3>
-						<p class="mt-2 text-lg tracking-wider">
-							<a href="https://www.netlify.com" class="text-emerald-700 dark:text-emerald-400 hover:underline" target="_blank">Voir le site</a>
-						</p>
-					</div>
-				</div>
-	
-				<div class="flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('https://img.freepik.com/vecteurs-libre/bientot-design-backgroun-noir_1017-37033.jpg?t=st=1727881249~exp=1727884849~hmac=d89f5f17363d94e89fda36fde8cf1c851e4bfe6c6bd0dc01753b38aaf5614183&w=826')">
-					<div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-neutral-700/60">
-						<h2 class="mt-4 text-xl font-semibold text-neutral-800 capitalize dark:text-white">
-							Live private message
-						</h2>
-						<p class="mt-2 text-lg tracking-wider">
-							<a href="https://www.netlify.com" class="text-emerald-700 dark:text-emerald-400 hover:underline" target="_blank">Voir le site</a>
-						</p>
-					</div>
-				</div>
-	
-				<div class="flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('https://img.freepik.com/vecteurs-libre/bientot-design-backgroun-noir_1017-37033.jpg?t=st=1727881249~exp=1727884849~hmac=d89f5f17363d94e89fda36fde8cf1c851e4bfe6c6bd0dc01753b38aaf5614183&w=826')">
-					<div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-neutral-700/60">
-						<h2 class="mt-4 text-xl font-semibold text-neutral-800 capitalize dark:text-white">
-							React webmail
-						</h2>
-						<p class="mt-2 text-lg tracking-wider">
-							<a href="https://www.netlify.com" class="text-emerald-700 dark:text-emerald-400 hover:underline" target="_blank">Voir le site</a>
-						</p>
-					</div>
-				</div>
+				<Project title="Private photo albums" target="https://www.netlify.com" />
 				
+				<Project title="Live private message" target="https://www.netlify.com" />
+
+				<Project title="React webmail" target="https://www.netlify.com" />
 			</div>
 		</div>
 	</section>
