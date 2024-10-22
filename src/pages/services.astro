@@ -33,11 +33,36 @@ import About from '../components/About.astro';
                 En plus du développement de sites web, je propose diverses solutions numériques :
 			</p>
             <ul class="flex flex-col lg:flex-row gap-3 mt-4 text-lg text-neutral-700 list-disc marker:text-emerald-500">
-                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#site-internet">Site internet</a></li>
-                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#site-e-commerce">Site e-commerce</a></li>
-                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#mail-server">Serveur de messagerie</a></li>
-                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#nextcloud">Stockage de fichiers</a></li>
-                <li class="ml-6 hover:underline dark:text-neutral-200"><a href="#formations">Formations courtes</a></li>
+                <li class="ml-6 dark:text-neutral-200">
+					<a href="#site-internet" class="relative overflow-clip">
+						<span class="absolute inline-flex items-end left-0 bottom-0 top-0 right-0 bg-transparent after:block after:bg-emerald-400 after:w-0 after:h-0.5 after:hover:w-full after:transition-all after:duration-200"></span>
+						Site internet
+					</a>
+				</li>
+                <li class="ml-6 dark:text-neutral-200">
+					<a href="#site-e-commerce" class="relative overflow-clip">
+						<span class="absolute inline-flex items-end left-0 bottom-0 top-0 right-0 bg-transparent after:block after:bg-emerald-400 after:w-0 after:h-0.5 after:hover:w-full after:transition-all after:duration-200"></span>
+						Site e-commerce
+					</a>
+				</li>
+                <li class="ml-6 dark:text-neutral-200">
+					<a href="#mail-server" class="relative overflow-clip">
+						<span class="absolute inline-flex items-end left-0 bottom-0 top-0 right-0 bg-transparent after:block after:bg-emerald-400 after:w-0 after:h-0.5 after:hover:w-full after:transition-all after:duration-200"></span>
+						Serveur de messagerie
+					</a>
+				</li>
+                <li class="ml-6 dark:text-neutral-200">
+					<a href="#nextcloud" class="relative overflow-clip">
+						<span class="absolute inline-flex items-end left-0 bottom-0 top-0 right-0 bg-transparent after:block after:bg-emerald-400 after:w-0 after:h-0.5 after:hover:w-full after:transition-all after:duration-200"></span>
+						Stockage de fichiers
+					</a>
+				</li>
+                <li class="ml-6 dark:text-neutral-200">
+					<a href="#formations" class="relative overflow-clip">
+						<span class="absolute inline-flex items-end left-0 bottom-0 top-0 right-0 bg-transparent after:block after:bg-emerald-400 after:w-0 after:h-0.5 after:hover:w-full after:transition-all after:duration-200"></span>
+						Formations courtes
+					</a>
+				</li>
             </ul>
         </div>
     </section>
@@ -45,7 +70,7 @@ import About from '../components/About.astro';
 	<section id="site-internet" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
 		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
 			<div class="flex justify-center xl:justify-start 2xl:justify-center xl:w-1/2">
-				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="/img/website-service.jpg" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
 			</div>
 	
 			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
@@ -71,7 +96,7 @@ import About from '../components/About.astro';
 	<section id="site-e-commerce" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
 		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
 			<div class="flex justify-center xl:justify-end 2xl:justify-center xl:w-1/2 xl:order-last">
-				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="/img/ecommerce-service.jpg" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
 			</div>
 	
 			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
@@ -98,7 +123,7 @@ import About from '../components/About.astro';
 	<section id="mail-server" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
 		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
 			<div class="flex justify-center xl:justify-start 2xl:justify-center xl:w-1/2">
-				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="/img/mail-service.jpg" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
 			</div>
 	
 			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
@@ -125,7 +150,7 @@ import About from '../components/About.astro';
 	<section id="nextcloud" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
 		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
 			<div class="flex justify-center xl:justify-end 2xl:justify-center xl:w-1/2 xl:order-last">
-				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="/img/nextcloud-service.jpg" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
 			</div>
 	
 			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
@@ -152,7 +177,7 @@ import About from '../components/About.astro';
 	<section id="formations" class="bg-white min-h-[80vh] flex items-center justify-center dark:bg-neutral-900">
 		<div class="h-full container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
 			<div class="flex justify-center xl:justify-start 2xl:justify-center xl:w-1/2">
-				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+				<Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600 dark:border-emerald-500" src="/img/formations-service.jpg" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
 			</div>
 	
 			<div class="flex flex-col mt-6 xl:items-start xl:w-1/2 xl:mt-0">
