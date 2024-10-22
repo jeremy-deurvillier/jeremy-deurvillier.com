@@ -85,7 +85,7 @@ const { title, description } = Astro.props;
         let mouseY: number = e.clientY;
         let position: string = `${0 - (mouseX - width) * 0.015}% ${0 - (mouseY - height) * 0.015}%`;
 
-        header.style.setProperty('--position', position);
+        header?.style.setProperty('--position', position);
     }
 
     document.addEventListener("mousemove", parallax);
