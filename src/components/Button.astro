@@ -26,7 +26,13 @@ interface FormButton extends CommonProps {
 
 type Props = Link | Button | FormButton;
 
-const { text, tag, style = 'primary', target, bind } = Astro.props as Props;
+const { text, tag, style = 'primary' } = Astro.props as Props;
+
+let target: string|undefined;
+let bind: string|undefined;
+
+if (tag === 'link') target = (Astro.props as Link).target;
+if (tag === 'button') bind = (Astro.props as Button).bind;
 
 const primaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-4 px-6 text-xl font-medium text-center text-white bg-emerald-600 hover:bg-emerald-500 focus:ring-4 focus:ring-emerald-500 dark:focus:ring-emerald-500 primary';
 const secondaryStyle: string = 'font-serif tracking-wide inline-flex justify-center items-center py-4 px-6 sm:ms-4 text-xl font-medium text-neutral-900 focus:outline-none bg-white border border-neutral-200 hover:bg-neutral-100 hover:text-emerald-700 focus:z-10 focus:ring-4 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-600 dark:hover:text-white dark:hover:bg-neutral-700 secondary';
@@ -101,15 +107,21 @@ let className = (style === 'primary') ? primaryStyle : secondaryStyle;
 </style>
 
 <script>
+declare global {
+    interface Window {
+        actions: { [key: string]: () => void };
+    }
+}
+
 window.actions = window.actions || {};
 
 class JDButton extends HTMLElement {
     connectedCallback() {
         const button: HTMLButtonElement|null = this.querySelector('button');
-        const action = button?.dataset.action;
+        const action: string|undefined = button?.dataset.action;
 
         button?.addEventListener('click', () => {
-            window.actions[action]();
+            if (typeof action === 'string' && window.actions[action]) window.actions[action]();
         });
     }
 }
