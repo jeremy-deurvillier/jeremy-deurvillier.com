@@ -67,15 +67,15 @@ import About from '../components/About.astro';
                         <h3 class="text-neutral-400">Hey ! Je suis aussi ici :</h3>
 
                         <div class="flex mt-4 -mx-1.5 gap-4">
-                            <a class="mx-1.5 text-emerald-600 transition-colors duration-300 transform hover:text-emerald-700 dark:hover:text-emerald-500" href="https://github.com/jeremy-deurvillier" target="_blank">
+                            <a class="social-links mx-1.5 text-emerald-600 transition-colors duration-300 transform hover:text-emerald-700 dark:hover:text-emerald-500" href="https://github.com/jeremy-deurvillier" target="_blank">
                                 <Github class="w-7 h-7" />
                             </a>
 
-                            <a class="mx-1.5 text-emerald-600 transition-colors duration-300 transform hover:text-emerald-700 dark:hover:text-emerald-500" href="https://www.linkedin.com/in/jeremy-deurvillier/" target="_blank">
+                            <a class="social-links mx-1.5 text-emerald-600 transition-colors duration-300 transform hover:text-emerald-700 dark:hover:text-emerald-500" href="https://www.linkedin.com/in/jeremy-deurvillier/" target="_blank">
                                 <Linkedin class="w-7 h-7" />
                             </a>
 
-                            <a class="mx-1.5 text-emerald-600 transition-colors duration-300 transform hover:text-emerald-700 dark:hover:text-emerald-500" href="https://discord.gg/NAxjvzWGmC" target="_blank">
+                            <a class="social-links mx-1.5 text-emerald-600 transition-colors duration-300 transform hover:text-emerald-700 dark:hover:text-emerald-500" href="https://discord.gg/NAxjvzWGmC" target="_blank">
                                 <Discord class="w-8 h-8" />
                             </a>
                         </div>
@@ -115,6 +115,12 @@ import About from '../components/About.astro';
 	<About />
 
 </Layout>
+
+<style>
+    .social-links:hover {
+        animation: wiggle 1.5s linear infinite;
+    }
+</style>
 
 <script>
 (function() {
