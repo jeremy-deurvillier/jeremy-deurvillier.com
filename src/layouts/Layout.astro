@@ -5,9 +5,10 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 	description: string;
+	path: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, path } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,7 +35,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		<header class="custom-background-image">
-			<Navbar />
+			<Navbar currentPath={ path } />
 
 			<slot name="header" />
 		</header>
