@@ -1,6 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import Button from './Button.astro';
+
+interface Props {
+    path: string;
+}
+
+const { path } = Astro.props;
+
+const target: string = (path === '/prendre-rendez-vous')?'#creneaux-disponibles':'/prendre-rendez-vous';
 ---
 
 <section class="bg-gradient-to-r from-emerald-600 to-emerald-900 flex items-center justify-center">
@@ -22,7 +30,7 @@ import Button from './Button.astro';
             </p>
 
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-6 sm:-mx-2">
-                <Button tag="link" target="/prendre-rendez-vous" text="">
+                <Button tag="link" target={ target } text="">
                     <svg class="w-5 h-5 mx-2" xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 448 512"><path fill="currentColor" d="M128 0c17.7 0 32 14.3 32 32v32h128V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v48H0v-48c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32M0 192h448v272c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16m128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16m144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16m144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16"/></svg>
 
                     <span>
