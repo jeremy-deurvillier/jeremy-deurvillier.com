@@ -4,9 +4,19 @@ import Linkedin from './svg/Linkedin.astro';
 import Github from './svg/Github.astro';
 import Discord from './svg/Discord.astro';
 
-type Path = '/' | '/services' | '/formations' | '/contact';
+type MainPath = '/' | '/services' | '/formations' | '/contact';
+type AppointmentPath = '/prendre-rendez-vous';
+type SecondPath = '/mentions-legales' | '/conditions-generales';
 
-const pathsList: Path[] = ['/', '/services', '/formations', '/contact'];
+const mainPathsList: MainPath[] = ['/', '/services', '/formations', '/contact'];
+
+const appointmentPathList: AppointmentPath[] = ['/prendre-rendez-vous'];
+
+const secondPathsListWithText: Record<SecondPath, string> = {
+    '/mentions-legales': 'mentions légales',
+    '/conditions-generales': 'conditions générales'
+};
+const secondPathsList = Object.keys(secondPathsListWithText) as SecondPath[];
 
 const { currentPath } = Astro.props;
 ---
@@ -28,15 +38,30 @@ const { currentPath } = Astro.props;
         <div class="h-full container flex flex-col md:flex-row justify-between px-6 py-4 mx-auto">
             <div class="h-full flex flex-col justify-between">
                 <ul class="font-mono flex flex-col gap-4">
-                    { pathsList.map( path => {
+                    { mainPathsList.map( path => {
 
                         return (currentPath === path)
                         ? <li><span class="after:content-[''] after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-neutral-200/60">{ (path === '/')?'Accueil':path.substring(1) }</span></li>
                         : <li><a href={ path } class="after:content-[''] after:block after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-[2ch] after:h-1 after:bg-neutral-200/60 after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white">{ (path === '/')?'Accueil':path.substring(1) }</a></li>
                     }) }
+
+                    { (currentPath === appointmentPathList[0])
+                    ? <li class="mt-4 sm:mt-5 xl:mt-7"><span class="font-serif font-bold text-2xl sm:text-3xl xl:text-5xl text-neutral-200/60 bg-emerald-600 py-2 px-3 border-2 border-neutral-200/60 rounded-sm">Prendre rendez-vous</span></li>
+                    : <li class="mt-4 sm:mt-5 xl:mt-7"><a href="/prendre-rendez-vous" class="font-serif font-bold text-2xl sm:text-3xl xl:text-5xl text-emerald-600 hover:text-white bg-white hover:bg-emerald-600 py-2 px-3 border-2 border-white rounded-sm transition-colors duration-200 *:scale-100 *:hover:scale-95 *:inline-block *:transition-all *:duration-200"><span>Prendre rendez-vous</span></a></li>
+                    }
+
+                    <li class="mt-0 sm:mt-5 xl:mt-7"></li>
+
+                    { secondPathsList.map(path => {
+                        let text: string = secondPathsListWithText[path];
+
+                        return (currentPath === path)
+                        ? <li><span class="after:content-[''] after:hidden md:after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative hidden md:inline-block font-mono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-neutral-200/60">{ text }</span></li>
+                        : <li><a href={ path } class="after:block after:absolute after:right-0 after:bg-neutral-200/60 after:w-0 after:h-1 after:hover:w-full after:transition-all after:duration-200 relative font-mono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-white hidden md:inline-block">{ text }</a></li>
+                    }) }
                 </ul>
 
-                <div class="after:content-[''] after:hidden after:md:block after:absolute after:left-0 after:top-0 after:w-24 after:h-0.5 after:lg:w-36 after:bg-neutral-200/60 after:-translate-y-2.5 relative font-medium text-white hidden md:block">
+                <div class="visible-if-height-valid after:content-[''] after:hidden after:md:block after:absolute after:left-0 after:top-0 after:w-24 after:h-0.5 after:lg:w-36 after:bg-neutral-200/60 after:-translate-y-2.5 relative font-medium text-white">
                     <blockquote class="italic">
                         <p class="mb-2.5">
                             Many great ideas go unexecuted, and many great executioners are without ideas. <br />One without the other is worthless.
@@ -80,6 +105,22 @@ const { currentPath } = Astro.props;
     }
 
     [x-cloak] {display: none !important;}
+
+    .visible-if-height-valid {
+        display: none;
+    }
+
+    @media (min-height: 640px) and (min-width: 768px) {
+        .visible-if-height-valid {
+            display: block;
+        }
+    }
+
+    @media (min-height: 640px) and (max-height: 767px) and (min-width: 1280px) {
+        .visible-if-height-valid {
+            display: none;
+        }
+    }
 
     .social-links:hover {
         display: block;
