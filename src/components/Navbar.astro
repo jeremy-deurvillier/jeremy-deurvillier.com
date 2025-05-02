@@ -27,7 +27,7 @@ const { currentPath } = Astro.props;
             <Image src="/img/logo.svg" alt="Logo de Jérémy Deurvillier" width="32" height="32" />
         </a>
 
-        <button class="flex flex-col gap-1.5 *:bg-gradient-to-r *:hover:from-[#269173] *:hover:to-[#065F46]" @click="isOpen = true">
+        <button class="flex flex-col gap-1.5 *:bg-gradient-to-r hover:*:from-[#269173] hover:*:to-[#065F46] cursor-pointer" @click="isOpen = true">
             <span class="w-5 h-1 block bg-neutral-300 transition-colors duration-300"></span>
             <span class="w-8 h-1 block bg-neutral-300 transition-colors duration-300"></span>
             <span class="w-5 h-1 block bg-neutral-300 transition-colors duration-300 self-end"></span>
@@ -37,17 +37,17 @@ const { currentPath } = Astro.props;
     <div class="bg-emerald-600 fixed left-0 top-0 z-50 w-screen h-screen backdrop-blur-md animate__animated animate__bounceInDown" x-cloak x-show="isOpen" x-transition:leave="animate__bounceOutUp">
         <div class="h-full container flex flex-col md:flex-row justify-between px-6 py-4 mx-auto">
             <div class="h-full flex flex-col justify-between">
-                <ul class="font-mono flex flex-col gap-4">
+                <ul class="font-sono flex flex-col gap-4">
                     { mainPathsList.map( path => {
 
                         return (currentPath === path)
                         ? <li><span class="after:content-[''] after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-neutral-200/60">{ (path === '/')?'Accueil':path.substring(1) }</span></li>
-                        : <li><a href={ path } class="after:content-[''] after:block after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-[2ch] after:h-1 after:bg-neutral-200/60 after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white">{ (path === '/')?'Accueil':path.substring(1) }</a></li>
+                        : <li><a href={ path } class="after:block after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[2ch] after:h-1 after:bg-neutral-200/60 after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white">{ (path === '/')?'Accueil':path.substring(1) }</a></li>
                     }) }
 
                     { (currentPath === appointmentPathList[0])
-                    ? <li class="mt-4 sm:mt-5 xl:mt-7"><span class="font-serif font-bold text-2xl sm:text-3xl xl:text-5xl text-neutral-200/60 bg-emerald-600 py-2 px-3 border-2 border-neutral-200/60 rounded-sm">Prendre rendez-vous</span></li>
-                    : <li class="mt-4 sm:mt-5 xl:mt-7"><a href="/prendre-rendez-vous" class="font-serif font-bold text-2xl sm:text-3xl xl:text-5xl text-emerald-600 hover:text-white bg-white hover:bg-emerald-600 py-2 px-3 border-2 border-white rounded-sm transition-colors duration-200 *:scale-100 *:hover:scale-95 *:inline-block *:transition-all *:duration-200"><span>Prendre rendez-vous</span></a></li>
+                    ? <li class="mt-4 sm:mt-5 xl:mt-7"><span class="font-zilla font-bold text-2xl sm:text-3xl xl:text-5xl text-neutral-200/60 bg-emerald-600 py-2 px-3 border-2 border-neutral-200/60 rounded-sm">Prendre rendez-vous</span></li>
+                    : <li class="mt-4 sm:mt-5 xl:mt-7"><a href="/prendre-rendez-vous" class="font-zilla font-bold text-2xl sm:text-3xl xl:text-5xl text-emerald-600 hover:text-white bg-white hover:bg-emerald-600 py-2 px-3 border-2 border-white rounded-sm transition-colors duration-200 *:scale-100 *:hover:scale-95 *:inline-block *:transition-all *:duration-200"><span>Prendre rendez-vous</span></a></li>
                     }
 
                     <li class="mt-0 sm:mt-5 xl:mt-7"></li>
@@ -56,8 +56,8 @@ const { currentPath } = Astro.props;
                         let text: string = secondPathsListWithText[path];
 
                         return (currentPath === path)
-                        ? <li><span class="after:content-[''] after:hidden md:after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative hidden md:inline-block font-mono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-neutral-200/60">{ text }</span></li>
-                        : <li><a href={ path } class="after:block after:absolute after:right-0 after:bg-neutral-200/60 after:w-0 after:h-1 after:hover:w-full after:transition-all after:duration-200 relative font-mono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-white hidden md:inline-block">{ text }</a></li>
+                        ? <li><span class="after:hidden md:after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-neutral-200/60 relative hidden md:inline-block font-sono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-neutral-200/60">{ text }</span></li>
+                        : <li><a href={ path } class="after:block after:absolute after:right-0 after:bg-neutral-200/60 after:w-0 after:h-1 hover:after:w-full after:transition-all after:duration-200 relative font-sono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-white hidden md:inline-block">{ text }</a></li>
                     }) }
                 </ul>
 
@@ -91,7 +91,7 @@ const { currentPath } = Astro.props;
                 </ul>
 
                 <div class="flex items-center justify-center -translate-y-0.5 md:-translate-y-5">
-                    <button class="close-icon text-6xl text-white transition-all duration-200" @click="isOpen = false">&times;</button>
+                    <button class="close-icon text-6xl text-white transition-all duration-200 cursor-pointer" @click="isOpen = false">&times;</button>
                 </div>
             </div>
         </div>
