@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import H2 from '../components/H2.astro';
-import ReadMore from '../components/ReadMore.astro';
+import Benefit from '../components/Benefit.astro';
 import Project from '../components/Project.astro';
 import About from '../components/About.astro';
 ---
@@ -13,7 +13,7 @@ import About from '../components/About.astro';
 	<section slot="header" class="h-screen flex items-center justify-center">
 		<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
 			<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-neutral-900 md:text-5xl lg:text-6xl dark:text-white">
-				Des <strong class="text-emerald-400">solutions</strong> web sur mesure pour <strong class="text-emerald-400">propulser votre entreprise</strong>
+				Des <strong class="text-blue">solutions</strong> web sur mesure pour <strong class="text-blue">propulser votre entreprise</strong>
 			</h1>
 			<p class="mb-8 text-lg font-normal text-neutral-500 lg:text-xl sm:px-16 lg:px-48 dark:text-neutral-400">
 				Renforcez votre présence en ligne et accélérez votre croissance grâce à un site performant et sécurisé.
@@ -38,81 +38,41 @@ import About from '../components/About.astro';
 			</p>
 
 			<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
-				<div class="space-y-3">
-					<span class="inline-block p-3 text-emerald-500 bg-emerald-100 rounded-full dark:text-white dark:bg-emerald-500">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 32 32"><circle cx="20" cy="8" r="1" fill="currentColor"/><circle cx="23" cy="8" r="1" fill="currentColor"/><circle cx="26" cy="8" r="1" fill="currentColor"/><path fill="currentColor" d="M28 4H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 2v4H4V6ZM4 12h6v14H4Zm8 14V12h16v14Z"/></svg>
-					</span>
+				<Benefit title="Site internet" url="/services#site-internet">
+					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 32 32"><circle cx="20" cy="8" r="1" fill="currentColor"/><circle cx="23" cy="8" r="1" fill="currentColor"/><circle cx="26" cy="8" r="1" fill="currentColor"/><path fill="currentColor" d="M28 4H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 2v4H4V6ZM4 12h6v14H4Zm8 14V12h16v14Z"/></svg>
 
-					<h3 class="text-xl font-semibold text-neutral-700 capitalize dark:text-white">
-						Site internet
-					</h3>
-
-					<p class="text-neutral-500 dark:text-neutral-300">
+					<span slot="text">
 						Création de sites web sur mesure, optimisés pour une expérience utilisateur fluide et une visibilité accrue.
-					</p>
-
-					<ReadMore text="En savoir plus" target="/services#site-internet" />
-				</div>
-				<div class="space-y-3">
-					<span class="inline-block p-3 text-emerald-500 bg-emerald-100 rounded-full dark:text-white dark:bg-emerald-500">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 10h9.231M6 14h9.231M18 5.086A5.95 5.95 0 0 0 14.615 4c-3.738 0-6.769 3.582-6.769 8s3.031 8 6.769 8A5.94 5.94 0 0 0 18 18.916"/></svg>
 					</span>
+				</Benefit>
+				<Benefit title="Site e-commerce" url="/services#site-e-commerce">
+					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 10h9.231M6 14h9.231M18 5.086A5.95 5.95 0 0 0 14.615 4c-3.738 0-6.769 3.582-6.769 8s3.031 8 6.769 8A5.94 5.94 0 0 0 18 18.916"/></svg>
 
-					<h3 class="text-xl font-semibold text-neutral-700 capitalize dark:text-white">
-						Site e-commerce
-					</h3>
-
-					<p class="text-neutral-500 dark:text-neutral-300">
+					<span slot="text">
 						Développement de boutiques en ligne personnalisées pour vous permettre de vendre vos produits facilement et efficacement.
-					</p>
-
-					<ReadMore text="En savoir plus" target="/services#site-e-commerce" />
-				</div>
-				<div class="space-y-3">
-					<span class="inline-block p-3 text-emerald-500 bg-emerald-100 rounded-full dark:text-white dark:bg-emerald-500">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.866 10.116l-8-5.231v10.5q0 .269.173.442T3.48 16h10.115v1H3.481q-.69 0-1.153-.462t-.462-1.153V4.615q0-.69.462-1.153T3.481 3H18.25q.69 0 1.153.463t.463 1.152v4.77h-1v-4.5zm0-1.116l7.692-5H3.173zm8 11.962q-1.362 0-2.316-.954t-.954-2.316v-4.5q0-.8.543-1.342t1.342-.542t1.342.542t.543 1.342v4.5h-1v-4.5q0-.373-.256-.628q-.256-.256-.63-.256t-.628.256t-.256.628v4.5q0 .94.665 1.605q.664.665 1.605.665q.94 0 1.604-.665q.665-.664.665-1.605v-4h1v4q0 1.362-.954 2.316t-2.316.954m-16-16.077V4v12z"/></svg>
 					</span>
+				</Benefit>
+				<Benefit title="Serveur de messagerie" url="/services#serveur-mails">
+					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.866 10.116l-8-5.231v10.5q0 .269.173.442T3.48 16h10.115v1H3.481q-.69 0-1.153-.462t-.462-1.153V4.615q0-.69.462-1.153T3.481 3H18.25q.69 0 1.153.463t.463 1.152v4.77h-1v-4.5zm0-1.116l7.692-5H3.173zm8 11.962q-1.362 0-2.316-.954t-.954-2.316v-4.5q0-.8.543-1.342t1.342-.542t1.342.542t.543 1.342v4.5h-1v-4.5q0-.373-.256-.628q-.256-.256-.63-.256t-.628.256t-.256.628v4.5q0 .94.665 1.605q.664.665 1.605.665q.94 0 1.604-.665q.665-.664.665-1.605v-4h1v4q0 1.362-.954 2.316t-2.316.954m-16-16.077V4v12z"/></svg>
 
-					<h3 class="text-xl font-semibold text-neutral-700 capitalize dark:text-white">
-						Serveur de messagerie
-					</h3>
-
-					<p class="text-neutral-500 dark:text-neutral-300">
+					<span slot="text">
 						Installation de serveurs de messagerie dédiés pour gérer vos e-mails en toute sécurité.
-					</p>
-
-					<ReadMore text="En savoir plus" target="/services#mail-server" />
-				</div>
-				<div class="space-y-3">
-					<span class="inline-block p-3 text-emerald-500 bg-emerald-100 rounded-full dark:text-white dark:bg-emerald-500">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M28.59 20.59L22 27.18l-2.59-2.59L18 26l4 4l8-8zM10 20h6v2h-6zm0-4h8v2h-8z"/><path fill="currentColor" d="M8 4h8v6c0 1.1.9 2 2 2h6v6h2v-8c0-.3-.1-.5-.3-.7l-7-7c-.2-.2-.4-.3-.7-.3H8c-1.1 0-2 .9-2 2v24c0 1.1.9 2 2 2h7v-2H8zm10 .4l5.6 5.6H18z"/></svg>
 					</span>
+				</Benefit>
+				<Benefit title="Stockage de fichiers" url="/services#serveur-fichiers">
+					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M28.59 20.59L22 27.18l-2.59-2.59L18 26l4 4l8-8zM10 20h6v2h-6zm0-4h8v2h-8z"/><path fill="currentColor" d="M8 4h8v6c0 1.1.9 2 2 2h6v6h2v-8c0-.3-.1-.5-.3-.7l-7-7c-.2-.2-.4-.3-.7-.3H8c-1.1 0-2 .9-2 2v24c0 1.1.9 2 2 2h7v-2H8zm10 .4l5.6 5.6H18z"/></svg>
 
-					<h3 class="text-xl font-semibold text-neutral-700 capitalize dark:text-white">
-						Stockage de fichiers
-					</h3>
-
-					<p class="text-neutral-500 dark:text-neutral-300">
+					<span slot="text">
 						Mise en place de solutions de stockage de fichiers avec Nextcloud pour un accès sécurisé et un partage simplifié de vos données.
-					</p>
-
-					<ReadMore text="En savoir plus" target="/services#nextcloud" />
-				</div>
-				<div class="space-y-3">
-					<span class="inline-block p-3 text-emerald-500 bg-emerald-100 rounded-full dark:text-white dark:bg-emerald-500">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 17l6-6l-6-6m8 14h8"/></svg>
 					</span>
+				</Benefit>
+				<Benefit title="Formations courtes" url="/services#formations">
+					<svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 17l6-6l-6-6m8 14h8"/></svg>
 
-					<h3 class="text-xl font-semibold text-neutral-700 capitalize dark:text-white">
-						Formations courtes
-					</h3>
-
-					<p class="text-neutral-500 dark:text-neutral-300">
+					<span slot="text">
 						Formations pratiques pour acquérir les bases du développement web et de l’administration Linux.
-					</p>
-
-					<ReadMore text="En savoir plus" target="/services#formations" />
-				</div>
+					</span>
+				</Benefit>
 			</div>
 		</div>
 	</section>
