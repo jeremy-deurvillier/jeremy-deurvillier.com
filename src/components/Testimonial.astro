@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+
+type Props = {
+    fullname: string;
+    photo: string;
+    job: string;
+    company: string;
+    url: string;
+};
+
+const { fullname, photo, job, company, url } = Astro.props as Props;
+const alt_photo = `${fullname}, ${company}`;
+---
+
+<div class="p-6 bg-neutral-100 rounded-lg dark:bg-neutral-800 md:p-8">
+    <p class="leading-loose text-neutral-500 dark:text-neutral-300">
+        <slot />
+    </p>
+
+    <div class="flex items-center mt-6">
+        <Image class="object-cover rounded-full w-14 h-14" src={ photo } width="56" height="56" alt={ alt_photo } />
+        
+        <div class="mx-4">
+            <h3 class="font-semibold text-blue dark:text-violet">{ fullname }</h3>
+            <span class="text-sm text-neutral-500 dark:text-neutral-300">
+                { job }, 
+                <a href={ url } target="_blank" class="underline">
+                    { company }
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
