@@ -5,4 +5,10 @@
     --font-nunito: "Nunito", sans-serif; 
     --font-sono: "Sono", monospace; 
     --font-zilla: "Zilla Slab", serif; 
+
+    --color-blue: #9262FD; /* Medium slate blue */
+    --color-violet: #D176FF; /* Heliotrope */
+    --color-ghost: #F6F4FB; /* Ghost white */
+
+    --shadow-around: 0 0 16px rgba(0, 0, 0, .25);
 }

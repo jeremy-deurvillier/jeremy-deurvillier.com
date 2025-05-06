@@ -11,18 +11,18 @@ const { path } = Astro.props;
 const target: string = (path === '/prendre-rendez-vous')?'#creneaux-disponibles':'/prendre-rendez-vous';
 ---
 
-<section class="bg-gradient-to-r from-emerald-600 to-emerald-900 flex items-center justify-center">
+<section class="bg-linear-to-r from-blue to-violet flex items-center justify-center">
     <div class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
         <div class="flex justify-center xl:justify-end xl:w-1/2 xl:order-last ">
-            <Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-emerald-600" src="/img/profile-photo.png" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
+            <Image class="h-72 w-72 sm:h-80 sm:w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full border-4 border-blue" src="/img/profile-photo.png" width="320" height="320" alt="Jérémy Deurvillier, Développeur Web" />
         </div>
 
         <div class="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">
-            <h2 class="text-2xl font-semibold tracking-tight xl:text-3xl text-white">
+            <h2 class="text-2xl font-semibold tracking-tight xl:text-3xl text-black">
                 À propos
             </h2>
 
-            <p class="block max-w-2xl mt-4 text-neutral-200">
+            <p class="text-lg block max-w-2xl mt-4 text-black">
                 Je suis Jérémy Deurvillier, développeur web à Saint-Étienne.
                 Passionné par les technologies web et l'informatique, 
                 mon objectif est de vous apporter mon savoir-faire pour accompagner la croissance de votre entreprise.
