@@ -21,13 +21,13 @@ const secondPathsList = Object.keys(secondPathsListWithText) as SecondPath[];
 const { currentPath } = Astro.props;
 ---
 
-<nav class="container px-6 py-4 mx-auto" x-data="{isOpen: false}" @keyup.comma.window="isOpen = true" @keyup.escape.window="isOpen = false">
+<nav class="container px-6 py-4 mx-auto" x-data="{isOpen: true}" @keyup.comma.window="isOpen = true" @keyup.escape.window="isOpen = false">
     <div class="flex items-center justify-between">
-        <a href="/" class="rounded-sm">
-            <Image src="/img/logo.svg" alt="Logo de Jérémy Deurvillier" width="32" height="32" />
+        <a href="/" class="rounded-sm focus:outline-4 outline-blue dark:outline-violet" aria-label="Site Web de Jérémy Deurvillier - Aller à la page d'accueil">
+            <Image class="w-auto h-8 rounded-sm" src="/img/logo.svg" width="32" height="32" alt="Logo de Jérémy Deurvillier" />
         </a>
 
-        <button class="flex flex-col gap-1.5 hover:*:bg-blue hover:*:bg-linear-to-r hover:*:from-blue hover:*:to-violet cursor-pointer" @click="isOpen = true">
+        <button class="flex flex-col gap-1.5 hover:*:bg-blue hover:*:bg-linear-to-r hover:*:from-blue hover:*:to-violet focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1 cursor-pointer" @click="isOpen = true" :aria-label="isOpen?'Menu principal ouvert':'Ouvrir le menu principal'">
             <span class="w-5 h-1 block bg-neutral-300 transition-colors duration-300"></span>
             <span class="w-8 h-1 block bg-neutral-300 transition-colors duration-300"></span>
             <span class="w-5 h-1 block bg-neutral-300 transition-colors duration-300 self-end"></span>
@@ -41,13 +41,13 @@ const { currentPath } = Astro.props;
                     { mainPathsList.map( path => {
 
                         return (currentPath === path)
-                        ? <li><span class="after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-white/75 relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white/75">{ (path === '/')?'Accueil':path.substring(1) }</span></li>
-                        : <li><a href={ path } class="after:block after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[2ch] after:h-1 after:bg-white after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white">{ (path === '/')?'Accueil':path.substring(1) }</a></li>
+                        ? <li><span class="after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-white/75 relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white/75 p-1">{ (path === '/')?'Accueil':path.substring(1) }</span></li>
+                        : <li><a href={ path } class="after:block after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[2ch] after:h-1 after:bg-white after:transition-all relative font-bold text-4xl sm:text-5xl xl:text-7xl uppercase text-white focus:outline-4 outline-white rounded-sm p-1">{ (path === '/')?'Accueil':path.substring(1) }</a></li>
                     }) }
 
                     { (currentPath === appointmentPathList[0])
                     ? <li class="mt-4 sm:mt-5 xl:mt-7"><span class="font-zilla font-bold text-2xl sm:text-3xl xl:text-5xl text-white/75 bg-transparent py-2 px-3 border-2 border-white/75 rounded-sm">Prendre rendez-vous</span></li>
-                    : <li class="mt-4 sm:mt-5 xl:mt-7"><a href="/prendre-rendez-vous" class="font-zilla font-bold text-2xl sm:text-3xl xl:text-5xl text-blue hover:text-white bg-white hover:bg-transparent py-2 px-3 border-2 border-white rounded-sm transition-colors duration-200 *:scale-100 *:hover:scale-95 *:inline-block *:transition-all *:duration-200"><span>Prendre rendez-vous</span></a></li>
+                    : <li class="mt-4 sm:mt-5 xl:mt-7"><a href="/prendre-rendez-vous" class="font-zilla font-bold text-2xl sm:text-3xl xl:text-5xl text-blue hover:text-white bg-white hover:bg-transparent py-2 px-3 border-2 border-white rounded-sm transition-colors duration-200 *:scale-100 *:hover:scale-95 *:inline-block *:transition-all *:duration-200 focus:text-white focus:bg-transparent outline-none"><span>Prendre rendez-vous</span></a></li>
                     }
 
                     <li class="mt-0 sm:mt-5 xl:mt-7"></li>
@@ -57,7 +57,7 @@ const { currentPath } = Astro.props;
 
                         return (currentPath === path)
                         ? <li><span class="after:hidden md:after:block after:absolute after:left-0 after:top-1/2 after:right-0 after:h-1 after:bg-white/75 relative hidden md:inline-block font-sono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-white/75">{ text }</span></li>
-                        : <li><a href={ path } class="after:block after:absolute after:right-0 after:bg-white after:w-0 after:h-1 hover:after:w-full after:transition-all after:duration-200 relative font-sono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-white hidden md:inline-block">{ text }</a></li>
+                        : <li><a href={ path } class="after:block after:absolute after:right-0 after:bg-white after:w-0 after:h-1 hover:after:w-full after:transition-all after:duration-200 relative font-sono font-bold text-xl sm:text-2xl xl:text-4xl capitalize text-white hidden md:inline-block focus:outline-4 outline-white rounded-sm p-1">{ text }</a></li>
                     }) }
                 </ul>
 
@@ -74,24 +74,29 @@ const { currentPath } = Astro.props;
             <div class="flex md:flex-col items-center justify-between">
                 <ul class="after:hidden after:md:block after:absolute after:left-1/2 after:top-0 after:w-0.5 after:h-24 after:lg:h-36 after:bg-white/75 after:-translate-y-32 after:lg:-translate-y-44 relative flex md:flex-col items-center md:justify-end gap-8 md:order-last">
                     <li>
-                        <a class="social-links text-white" href="https://github.com/jeremy-deurvillier" target="_blank">
+                        <a class="social-links block text-white focus:outline-4 outline-white rounded-sm" href="https://github.com/jeremy-deurvillier" target="_blank" aria-label="Voir le profil Github de Jérémy Deurvillier">
                             <Github class="w-8 h-8" />
                         </a>
                     </li>
                     <li>
-                        <a class="social-links text-white" href="https://www.linkedin.com/in/jeremy-deurvillier/" target="_blank">
+                        <a class="social-links block text-white focus:outline-4 outline-white rounded-sm" href="https://www.linkedin.com/in/jeremy-deurvillier/" target="_blank" aria-label="Voir le profil Linkedin de Jérémy Deurvillier">
                             <Linkedin class="w-8 h-8" />
                         </a>
                     </li>
                     <li>
-                        <a class="social-links text-white" href="https://discord.gg/NAxjvzWGmC" target="_blank">
+                        <a class="social-links block text-white focus:outline-4 outline-white rounded-sm" href="https://discord.gg/NAxjvzWGmC" target="_blank" aria-label="Rejoindre le serveur Discord de Jérémy Deurvillier">
                             <Discord class="w-8 h-8" />
                         </a>
                     </li>
                 </ul>
 
-                <div class="flex items-center justify-center -translate-y-0.5 md:-translate-y-5">
-                    <button class="close-icon text-6xl text-white transition-all duration-200 cursor-pointer" @click="isOpen = false">&times;</button>
+                <div class="flex items-center justify-center">
+                    <button class="close-icon w-10 h-10 lg:w-12 lg:h-12 text-white transition-all duration-200 cursor-pointer focus:outline-4 outline-white rounded-full" @click="isOpen = false" aria-label="isOpen?'Fermer le menu principal':'Menu principal fermé'">
+                        <div class="flex flex-col items-center justify-center rotate-45 cursor-pointer translate-x-0.25 -translate-y-0.25">
+                            <span class="w-8 lg:w-9.5 h-1 block bg-white translate-y-full"></span>
+                            <span class="w-8 lg:w-9.5 h-1 block bg-white rotate-90"></span>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>

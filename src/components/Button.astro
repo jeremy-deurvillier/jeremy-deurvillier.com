@@ -34,8 +34,8 @@ let bind: string|undefined;
 if (tag === 'link') target = (Astro.props as Link).target;
 if (tag === 'button') bind = (Astro.props as Button).bind;
 
-const primaryStyle: string = 'font-zilla tracking-wide inline-flex justify-center items-center py-4 px-6 text-xl font-medium text-center text-white bg-blue bg-linear-to-r from-blue to-violet shadow-around transition transition-shadow duration-200 duration-1000 focus:ring-4 focus:ring-blue dark:focus:ring-violet cursor-pointer primary';
-const secondaryStyle: string = 'font-zilla tracking-wide inline-flex justify-center items-center py-4 px-6 sm:ms-4 text-xl font-medium text-neutral-800 hover:text-neutral-950 shadow-around focus:outline-none bg-ghost border-2 border-violet/60 hover:text-neutral-950 transition duration-200 focus:z-10 focus:ring-4 focus:ring-blue dark:focus:ring-violet dark:text-neutral-400 dark:hover:text-neutral-300 dark:bg-transparent cursor-pointer secondary';
+const primaryStyle: string = 'font-zilla tracking-wide inline-flex justify-center items-center py-4 px-6 text-xl font-medium text-white bg-blue bg-linear-to-r from-blue to-violet shadow-around transition transition-shadow duration-200 duration-1000 focus:outline-4 outline-blue dark:outline-violet cursor-pointer primary';
+const secondaryStyle: string = 'font-zilla tracking-wide inline-flex justify-center items-center py-4 px-6 sm:ms-4 text-xl font-medium text-neutral-800 shadow-around bg-ghost border-2 border-violet/60 hover:text-neutral-950 transition duration-200 focus:z-10 focus:outline-4 outline-blue dark:outline-violet dark:text-neutral-400 dark:hover:text-neutral-300 dark:bg-transparent cursor-pointer secondary';
 
 let className = (style === 'primary') ? primaryStyle : secondaryStyle;
 

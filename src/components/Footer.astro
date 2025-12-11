@@ -4,23 +4,23 @@ import { Image } from 'astro:assets';
 
 <footer class="text-sm text-neutral-500 dark:text-neutral-200 custom-background-image border-t-2 border-blue">
     <div class="container flex flex-col items-center justify-between px-6 pt-8 pb-4 mx-auto sm:flex-row">
-        <a href="/">
+        <a href="/" class="rounded-sm focus:outline-4 outline-blue dark:outline-violet" aria-label="Site Web de Jérémy Deurvillier - Aller à la page d'accueil">
             <Image class="w-auto h-7 rounded-sm" src="/img/logo.svg" width="28" height="28" alt="Logo de Jérémy Deurvillier" />
         </a>
 
         <ul class="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
-            <li><a href="/" class="hover:underline">Accueil</a></li>
-            <li><a href="/services" class="hover:underline">Services</a></li>
-            <li><a href="/formations" class="hover:underline">Formations</a></li>
-            <li><a href="/contact" class="hover:underline">Contact</a></li>
-            <li><a href="/prendre-rendez-vous" class="hover:underline">Prendre rendez-vous</a></li>
+            <li><a href="/" class="hover:underline focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1">Accueil</a></li>
+            <li><a href="/services" class="hover:underline focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1">Services</a></li>
+            <li><a href="/formations" class="hover:underline focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1">Formations</a></li>
+            <li><a href="/contact" class="hover:underline focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1">Contact</a></li>
+            <li><a href="/prendre-rendez-vous" class="hover:underline focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1">Prendre rendez-vous</a></li>
         </ul>
     </div>
 
     <div class="container flex flex-col items-center justify-between px-6 pt-0 pb-3 mx-auto sm:flex-row">
         <ul class="flex flex-wrap items-center justify-center gap-4 mt-3 sm:mt-0 lg:gap-6 lg:mt-0 sm:order-last">
-            <li><a href="/mentions-legales" class="hover:underline">Mentions légales</a></li>
-            <li><a href="/conditions-generales" class="hover:underline">Conditions Générales</a></li>
+            <li><a href="/mentions-legales" class="hover:underline focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1">Mentions légales</a></li>
+            <li><a href="/conditions-generales" class="hover:underline focus:outline-4 outline-blue dark:outline-violet rounded-sm p-1">Conditions Générales</a></li>
         </ul>
 
         <p class="pt-5 sm:pt-0">
