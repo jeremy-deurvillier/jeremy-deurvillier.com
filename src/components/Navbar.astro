@@ -21,7 +21,7 @@ const secondPathsList = Object.keys(secondPathsListWithText) as SecondPath[];
 const { currentPath } = Astro.props;
 ---
 
-<nav class="container px-6 py-4 mx-auto" x-data="{isOpen: true}" @keyup.comma.window="isOpen = true" @keyup.escape.window="isOpen = false">
+<nav class="container px-6 py-4 mx-auto" x-data="{isOpen: false}" @keyup.comma.window="isOpen = true" @keyup.escape.window="isOpen = false">
     <div class="flex items-center justify-between">
         <a href="/" class="rounded-sm focus:outline-4 outline-blue dark:outline-violet" aria-label="Site Web de Jérémy Deurvillier - Aller à la page d'accueil">
             <Image class="w-auto h-8 rounded-sm" src="/img/logo.svg" width="32" height="32" alt="Logo de Jérémy Deurvillier" />
